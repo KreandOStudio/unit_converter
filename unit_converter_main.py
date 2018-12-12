@@ -6,7 +6,7 @@ import random
 secret = random.randint(1, 20)
 guess = 0
 
-print "Bienvenidos a Secret Game!"
+print "Bienvenidos al Convertidor de Unidades! "
 
 try:
     while secret != guess:
