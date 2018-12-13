@@ -3,23 +3,32 @@
 
 import random
 
-secret = random.randint(1, 20)
-guess = 0
+seguimos = True
+milla = 1.609
+kms = None
+conv = None
 
-print "Bienvenidos al Convertidor de Unidades! "
+print "Bienvenidos al Conversor de Unidades! "
+print "Este programa convierte los kilometros introducidos a millas."
 
-try:
-    while secret != guess:
-        guess = int(raw_input("Introduzca el número a adivinar, ¿lo adivinarás? Tiene que ser del 1 al 20. ¡ADELANTE!: "))
-        if guess >= 0:
-            if guess <= 20:
-                if guess == secret:
-                    print "¡ACERTASTE! INCREIBLE!!"
+while seguimos:
+    try:
+        kms = int(raw_input("Introduzca el número de Kilómetros a convertir (ejemplo: 24.3): "))
+        if kms >= 0:
+            conv = kms / milla
+            print "El resultado de la conversión es {} millas.".format(conv)
+            correcto = True
+            while correcto:
+                pregunta = raw_input("¿Desea hacer otra conversión? (S/N): ")[0]
+                if pregunta == "n" or pregunta == "N": # or pregunta == "no" or pregunta =="NO" or pregunta == "No" or pregunta == "nO":
+                    seguimos = False
+                    correcto = seguimos
+                    print "Muchas gracias por usar el Conversor de Unidades."
+                elif pregunta == "s" or pregunta == "S":
+                    correcto = False
                 else:
-                    print "OOOOHHHH! Po va ser que no... FALLASTE!!" #Era", secret
-            else:
-                print "¿Crees que son pocos numeros? No te preocupes, trabajaremos para poner mas, de momento es hasta 20. Lo siento."
+                    print "Disculpe, no ha introducido una opción validad"
         else:
-            print "NO estan permitidos los numeros negativos! PERDISTE!!"
-except ValueError:
-    print "MAL CHAVAL/CHAVALA!! Debe ser un numero (del 1 al 20)!"
+            print "NO estan permitidos los numeros negativos."
+    except ValueError:
+        print "Por favor, introduzca solo números como por ejemplo 26.4."
