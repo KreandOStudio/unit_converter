@@ -13,7 +13,7 @@ print "Este programa convierte los kilometros introducidos a millas."
 
 while seguimos:
     try:
-        kms = int(raw_input("Introduzca el número de Kilómetros a convertir (ejemplo: 24.3): "))
+        kms = float(raw_input("Introduzca el número de Kilómetros a convertir (ejemplo: 24.3): "))
         if kms >= 0:
             conv = kms / milla
             print "El resultado de la conversión es {} millas.".format(conv)
