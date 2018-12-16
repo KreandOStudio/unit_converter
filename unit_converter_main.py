@@ -20,7 +20,11 @@ while seguimos:
             correcto = True
             while correcto:
                 pregunta = raw_input("¿Desea hacer otra conversión? (S/N): ")[0]
-                if pregunta == "n" or pregunta == "N": # or pregunta == "no" or pregunta =="NO" or pregunta == "No" or pregunta == "nO":
+                pregunta = pregunta.lower()
+                # print pregunta.upper(): Pone en mayusculas.
+                # print pregunta.lower(): Pone en minusculas.
+                #if pregunta == "n" or pregunta == "N": # or pregunta == "no" or pregunta =="NO" or pregunta == "No" or pregunta == "nO":
+                if pregunta == "n":
                     seguimos = False
                     correcto = seguimos
                     print "Muchas gracias por usar el Conversor de Unidades."
