@@ -1,8 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import random
-
 seguimos = True
 milla = 1.609
 kms = None
